@@ -1,0 +1,42 @@
+<view class="flex-column">
+    <scroll-view class="cart-list-wrap" scroll-y>
+        <view class="cart-item" wx:for="{{cartList}}">
+            <view class="check-ctrl" data-index="{{index}}" bindtap="checkOne">
+                <view class="check-icon iconfont {{item.checked?'icon-checked':'icon-unchecked'}}"></view>
+            </view>
+            <view class="product-item">
+                <image src="{{item.goods_grid}}" binderror="" bindload="" class="product-image"></image>
+                <view class="product-info">
+                    <text class="title">{{item.goods_name}}</text>
+                    <text class="slogan">商品slogan</text>
+                    <view class="price-count-edit">
+                        <text class="price">￥{{item.goods_price}}</text>   
+                        <text class="count"> x {{item.cart_count}} </text>  
+                        <view class="iconfont icon-edit edit-count" data-index="{{index}}" data-flag="show" bindtap="editPanel"></view>
+                    </view>
+
+                    <!--修改数量面板-->
+                    <view class="edit-panel {{item.showEditPanel}}">
+                        <view class="edit-bar">
+                            <button type="default" size="default" bindtap="changeCount" data-index="{{index}}" data-flag="reduce" class="btn-reduce">-</button>
+                            <input type="number" class="ipt-count" value="{{item.cart_count}}" />
+                            <button type="default" size="default" bindtap="changeCount" data-index="{{index}}" data-flag="add" class="btn-add">+</button>
+                        </view>
+                        <button type="default" bindtap="" class="btn-confirm-count" data-index="{{index}}" data-gid="{{item.goods_id}}" data-flag="hide" bindtap="editPanel">完成</button>
+                    </view>
+
+                </view>
+
+            </view>
+        </view>   
+    </scroll-view>
+    <view class="result-bar">
+        <view class="check-ctrl" bindtap="checkAll">
+            <view class="check-icon iconfont {{checkedAll?'icon-checked':'icon-unchecked'}}"></view>全选
+        </view>
+        <view class="result-info">
+            <text> 合计:￥{{total}} </text>        
+        </view>
+        <navigator class="result-btn">结算</navigator>   
+    </view>
+</view>

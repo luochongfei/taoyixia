@@ -1,0 +1,10 @@
+<view class="user-info">
+    <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+    <text class="nickname"> {{ userInfo.nickName }} </text>        
+</view>
+<navigator class="btn realname">
+    实名认证
+</navigator>
+<navigator class="btn delivery">
+    收货地址
+</navigator>

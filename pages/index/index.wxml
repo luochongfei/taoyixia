@@ -1,0 +1,103 @@
+<!--index.wxml-->
+<view class="container">
+
+    <!-- 头部（logo|搜索） -->
+    <view class="header">
+        <text class="logo">淘一下</text>
+        <form action="">
+            <view class="search-box">
+                <input type="text" placeholder="搜索商品" class="ipt-keyword" />
+                <input type="search" class="btn-search" value="搜索" />
+            </view>
+        </form>
+        <view class="hot-keyword">
+            <text>热搜：</text>        
+            <navigator url="" hover-class="" redirect>爱他美奶粉</navigator>
+            <navigator url="" hover-class="" redirect>花王纸尿裤</navigator>
+        </view>
+    </view>
+
+    <view class="title-bar">产品分类</view>
+    
+    <!-- 热门分类 -->
+    <view class="list-panel product-cate">
+
+        <navigator url="" wx:for="{{cates}}">
+            <view class="iconfont icon-{{item.cls}} cate-icon" style="color: {{item.color}}"></view>
+            <text class="cate-name">{{item.name}}</text>         
+        </navigator>
+
+        <block wx:if="{{cates.length>9}}">
+        <navigator url="" hover-class="" redirect>
+            <image style="" type="widthFix" src="/image/cates/nf.png"></image>
+            <text>奶粉</text>         
+        </navigator>
+        <navigator url="" hover-class="" redirect>
+            <image style="" type="widthFix" src="/image/cates/znk.png"></image>
+            <text>纸尿裤</text>        
+        </navigator>
+        <navigator url="" hover-class="" redirect>
+            <image style="" type="widthFix" src="/image/cates/yyfs.png"></image>
+            <text>营养辅食</text>        
+        </navigator>
+        <navigator url="" hover-class="" redirect>
+            <image style="" type="widthFix" src="/image/cates/bbyp.png"></image>
+            <text>宝宝用品</text>        
+        </navigator>
+        <navigator url="" hover-class="" redirect>
+            <image style="" type="widthFix" src="/image/cates/yybj.png"></image>
+            <text>营养保健</text>        
+        </navigator>
+        <navigator url="" hover-class="" redirect style="display:none;">
+            <text>更多分类></text>        
+        </navigator>
+        </block>
+    </view>
+
+    <view class="title-bar">热门品牌</view>
+    
+    <!-- 热门品牌 -->
+    <view class="list-panel brands">
+        <navigator redirect>
+            <image style="" mode="widthFix" src="/image/brands/merries.jpg" binderror="" bindload=""></image>
+            <text>花王</text>        
+        </navigator>   
+        
+        <navigator redirect> 
+            <image style="" mode="widthFix" src="/image/brands/aptamil.jpg" binderror="" bindload=""></image>
+            <text>爱他美</text>      
+        </navigator>
+
+        <navigator redirect>
+            <image style="" mode="widthFix" src="/image/brands/nutrilon.jpg" binderror="" bindload=""></image>
+            <text>诺优能</text>    
+        </navigator>
+
+        <navigator redirect>
+            <image style="" mode="widthFix" src="/image/brands/devondale.jpg" binderror="" bindload=""></image>
+            <text>德运</text>    
+        </navigator>
+
+        <navigator redirect>
+            <image style="" mode="widthFix" src="/image/brands/pampers.jpg" binderror="" bindload=""></image>
+            <text>帮宝适</text>    
+        </navigator>
+        <navigator redirect>
+            <text>更多品牌</text>    
+        </navigator>
+    </view>
+
+    <view class="title-bar">热销商品</view>
+
+    <view class="hot-products">
+        <navigator class="product-item" wx:for="{{products}}" url="/pages/detail/detail">
+            <image style="" mode="widthFix" src="{{item.goods_grid}}" binderror="" bindload="" class="product-image"></image>
+            <view class="product-info">
+                <text class="title">{{item.goods_name}}</text>
+                <text class="slogan">商品slogan</text>
+                <text class="price">￥{{item.goods_price}}</text>
+                <view class="iconfont icon-add-to-cart add-to-cart" data-gid="{{item.goods_id}}" catchtap="addToCart"></view>
+            </view>
+        </navigator>
+    </view>
+</view>

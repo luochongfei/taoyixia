@@ -1,0 +1,49 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/cart/cart",
+        "pages/user/user",
+        "pages/order/order"
+    ],
+    "window": {
+        "backgroundColor": "#643579",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#643579",
+        "navigationBarTitleText": "淘一下海购商城",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#aaaaaa",
+        "selectedColor": "#643579",
+        "borderStyle": "black",
+        "backgroundColor": "#fff",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "image/icon-home.png",
+                "selectedIconPath": "image/icon-home-active.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/cart/cart",
+                "iconPath": "image/icon-cart.png",
+                "selectedIconPath": "image/icon-cart-active.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "iconPath": "image/icon-order.png",
+                "selectedIconPath": "image/icon-order-active.png",
+                "text": "订单"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "iconPath": "image/icon-user.png",
+                "selectedIconPath": "image/icon-user-active.png",
+                "text": "个人中心"
+            }
+        ]
+    },
+    "debug": false
+}

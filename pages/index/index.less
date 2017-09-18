@@ -1,0 +1,188 @@
+/**index.wxss**/
+@import '../../lib/style/font.wxss';
+.header{
+    height: 350rpx;
+    background-color:#643579;
+}
+
+.logo{
+    display: flex;
+    padding: 60rpx 0 50rpx;
+    justify-content: center;
+    color: #fff;
+    font-size: 60rpx;
+}
+
+// 搜索
+.search-box{
+    display: flex;
+    margin:0 auto;
+    width:600rpx;
+    .ipt-keyword{
+        flex:1;
+        padding: 10rpx 20rpx;
+        height: 70rpx;
+        line-height: 10rpx;
+        background-color: #fff;
+        border-radius: 40rpx 0 0 40rpx;
+        font-size: 32rpx;
+    }
+    .btn-search{
+        width:160rpx;
+        height: 70rpx;
+        text-align: center;
+        background:#fff;
+        color:#643579;
+        border-radius:0 40rpx 40rpx 0 ;
+        font-size: 32rpx;
+    }
+}
+
+// 热词
+.hot-keyword{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+    color: #fff;
+    font-size: 26rpx;
+    display: none;
+    >text{
+        color: #999;
+    }
+    >navigator{
+        margin: 0 15rpx;
+        color: #eee;
+        text-decoration: underline;
+    }
+}
+
+// 标题
+.title-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30rpx 0 10rpx;
+    font-size: 30rpx;
+    color: #999;
+    text-align: center;
+    &:before,&:after{
+        content: '';
+        margin: 0 20rpx;
+        width: 60rpx;
+        height: 2rpx;
+        background-color: #bbb;
+    }
+}
+
+// 列表面板
+.list-panel{
+    margin: 0 auto 40rpx;
+    display: flex;
+    flex-wrap: wrap;
+    navigator{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 25%;
+        height: 140rpx;
+        text-align: center;
+        font-size: 30rpx;
+        text{
+            color: #666;
+        }
+    }
+}
+
+// 分类单独控制
+.product-cate{
+    navigator{
+        height: 80px;
+        .cate-icon{
+            display: inline-block;
+            margin-bottom: 10rpx;
+            font-size: 66rpx;
+        }
+        .cate-name{
+            font-size: 24rpx;
+        }
+    }
+}
+
+
+// 品牌单独控制
+.brands{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    navigator{
+        flex: 1 30%;
+        text-align: center;
+        padding: 20rpx 0;
+        height: 80px;
+        &:hover{
+            background-color: #fff;
+        }
+        &:nth-of-type(3n+3){
+            border-right: none;
+        }
+        image{
+            width: 50%;
+            height: 100%;
+        }
+        text{
+            display: block;
+            font-size: 28rpx;
+        }
+    }
+}
+
+// 商品项
+.product-item{
+    display: flex;
+    padding: 10rpx 25rpx;
+    margin:20rpx 0;
+    &:not(:last-child){
+        border-bottom:2rpx solid #eee;
+    }
+    // 左侧商品图片
+    .product-image{
+        margin-right: 20rpx;
+        width: 220rpx;
+        height: 220rpx;
+    }
+    // 右侧商品信息
+    .product-info{
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .title{
+            display: block;
+            font-size: 28rpx;
+        }
+        .slogan{
+            flex: 1;
+            display: block;
+            padding: 6rpx 80rpx 6rpx 0;
+            font-size: 24rpx;
+            color: #999;
+        }
+        .price{
+            display: block;
+            font-size: 34rpx;
+            color: #e61773;
+        }
+    }
+}
+
+// 加入购物车
+.add-to-cart{
+    position:absolute;
+    right: 20rpx;
+    top: 50%;
+    transform: translate(0,-50%);
+    font-size: 50rpx;
+    color:#e61773;
+}

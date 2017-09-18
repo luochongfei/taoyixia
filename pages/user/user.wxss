@@ -1,0 +1,34 @@
+page{
+    background-color: #f7f7f7;
+}
+.user-info{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color:#3498DB;
+    padding:30rpx 0;
+}
+.user-info .avatar{
+    width:180rpx;
+    height:180rpx;
+    border:4rpx solid #eee;
+    border-radius:50%;
+    box-shadow: 0 4rpx 4rpx rgba(50,50,50,.5)
+}
+.user-info .nickname{
+    padding:10rpx 0;
+    color:#fff;
+}
+
+.btn{
+    margin:2rpx auto;
+    padding:30rpx 0;
+    width:750rpx;
+    background-color: #fff;
+    border-radius: 2rpx;
+    text-align:center;
+    font-size: 32rpx;
+    box-shadow: 0 2rpx 2rpx rgba(50,50,50,.2);
+    color:#333;
+}

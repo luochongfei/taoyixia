@@ -1,0 +1,35 @@
+<view class="flex-column">
+
+    <scroll-view scroll-y class="scroll-detail-view" bindscroll="pageScroll">
+
+        <!--商品图片-->
+        <swiper indicator-dots="true" autoplay="{{false}}" interval="2000" duration="300" class="swiper-goods-img">
+            <block wx:for="{{goodsInfo.previewImgs}}">
+                <swiper-item>
+                    <image src="{{item}}" mode="aspectFit" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <!--商品基础信息-->
+        <view class="goods-basic-info">
+            <text class="price">￥28.00</text>
+            <text class="title">韩国Frufe芙茹菲 组合4小件</text>
+            <text class="desc">以补充肌肤所需维生素的系列产品，主要改变肌肤黯沉、蜡黄、干燥、敏感等问题。（本商品针对一个用户只发货一次）</text>
+        </view>
+
+        <!--商品详情图片-->
+        <view class="goods-detail">
+            <image src="{{item}}" mode="widthFix" class="detail-image-item" wx:for="{{goodsInfo.detailImgs}}" />
+        </view>
+
+    </scroll-view>
+
+    <view class="bottom-fixed-bar">
+        <view class="goods-intro {{bottomBarShowIntro&&'show'}}">
+            <text class="price">￥28.00</text>
+            <text class="title">韩国Frufe芙茹菲 组合4小件Frufe芙茹菲</text>
+        </view>
+        <view class="btn-add-to-cart">加入购物车</view>
+    </view>
+</view>
